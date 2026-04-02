@@ -1,0 +1,1083 @@
+# 2025
+- id: "ellis2025starobinsky"
+  type: "article"
+  year: 2025
+  authors:
+    - "John Ellis"
+    - "Tony Gherghetta"
+    - "Kunio Kaneta"
+    - "Wenqi Ke"
+    - "Keith A. Olive"
+  title: "Effects of Radiative Corrections on Starobinsky Inflation"
+  journal: "Physical Review D"
+  volume: 112
+  issue: 12
+  pages: "123530"
+  doi: "10.1103/8cx9-c642"
+  arxiv: "2510.15137"
+
+- id: "kaneta2025postreheating"
+  type: "article"
+  year: 2025
+  authors:
+    - "Kunio Kaneta"
+    - "Tomo Takahashi"
+    - "Natsumi Watanabe"
+  title: "Post-Reheating Inflaton Production as a Probe of Reheating Dynamics"
+  arxiv: "2508.20402"
+
+- id: "kanemura2025gravitational_rhn"
+  type: "article"
+  year: 2025
+  authors:
+    - "Shinya Kanemura"
+    - "Kunio Kaneta"
+    - "Dibyendu Nanda"
+  title: "On the Gravitational Waves from Super Massive Right-Handed Neutrinos Produced at Preheating"
+  journal: "Physical Review D"
+  volume: 113 
+  issue: 5
+  pages: "055046"
+  arxiv: "2508.00315"
+  doi: "10.1103/10.1103/rr5v-3jvg"
+
+- id: "anastasopoulos2025anomalies"
+  type: "proceedings"
+  year: 2025
+  authors:
+    - "Pascal Anastasopoulos"
+    - "Kunio Kaneta"
+    - "Elias Kiritsis"
+    - "Yann Mambrini"
+  title: "Anomalies in Effective Theories, Anomalous Couplings and the g-2 of the Muon"
+  doi: "10.1007/978-3-031-76856-9_10"
+
+- id: "kaneta2025scalartensor"
+  type: "article"
+  year: 2025
+  authors:
+    - "Kunio Kaneta"
+    - "Kin-ya Oda"
+    - "Motohiko Yoshimura"
+  title: "Observational Tests for a Class of Scalar-Tensor Gravity"
+  arxiv: "2505.08286"
+
+- id: "kaneta2025darkenergy_review"
+  type: "article"
+  year: 2025
+  authors:
+    - "Kunio Kaneta"
+    - "Hye-Sung Lee"
+    - "Jiheon Lee"
+    - "Jaeok Yi"
+  title: "Dark Energy Under a Gauge Symmetry: A Review of Gauged Quintessence and Its Implications"
+  journal: "International Journal of Modern Physics A"
+  volume: 40
+  issue: 25
+  pages: "2530009"
+  doi: "10.1142/S0217751X25300091"
+  arxiv: "2504.04820"
+
+- id: "kaneta2025commonorigin"
+  type: "article"
+  year: 2025
+  authors:
+    - "Kunio Kaneta"
+    - "Kin-ya Oda"
+    - "Motohiko Yoshimura"
+  title: "A Common Origin of Two Accelerating Universes: Inflation and Dark Energy"
+  arxiv: "2503.02409"
+
+# 2024
+- id: "yoshimura2024superradiance"
+  type: "article"
+  year: 2024
+  authors:
+    - "Motohiko Yoshimura"
+    - "Kunio Kaneta"
+    - "Kin-ya Oda"
+  title: "Parametrically Amplified Super-Radiance Towards Hot Big Bang Universe"
+  journal: "Physics Letters B"
+  volume: 859
+  pages: "139133"
+  doi: "10.1016/j.physletb.2024.139133"
+  arxiv: "2408.08605"
+
+- id: "kaneta2024pngb"
+  type: "article"
+  year: 2024
+  authors:
+    - "Kunio Kaneta"
+    - "Sung Mook Lee"
+    - "Kin-ya Oda"
+    - "Tomo Takahashi"
+  title: "Pseudo-Nambu-Goldstone Boson Production from Inflaton Coupling During Reheating"
+  journal: "Journal of Cosmology and Astroparticle Physics"
+  volume: 2024
+  issue: 11
+  pages: "058"
+  doi: "10.1088/1475-7516/2024/11/058"
+  arxiv: "2406.09045"
+
+- id: "kaneta2024jbd"
+  type: "article"
+  year: 2024
+  authors:
+    - "Kunio Kaneta"
+    - "Kin-ya Oda"
+    - "Motohiko Yoshimura"
+  title: "Accelerating Universe at Early and Late Times in Extended Jordan-Brans-Dicke Gravity"
+  journal: "Physical Review D"
+  volume: 110
+  issue: 4
+  pages: "043518"
+  doi: "10.1103/PhysRevD.110.043518"
+  arxiv: "2405.13402"
+
+- id: "kaneta2024nongravitational"
+  type: "article"
+  year: 2024
+  authors:
+    - "Kunio Kaneta"
+    - "Hye-Sung Lee"
+    - "Jiheon Lee"
+    - "Jaeok Yi"
+  title: "Non-Gravitational Signals of Dark Energy Under a Gauge Symmetry"
+  journal: "Journal of Cosmology and Astroparticle Physics"
+  volume: 2024
+  issue: 3
+  pages: "048"
+  doi: "10.1088/1475-7516/2024/03/048"
+  arxiv: "2312.09717"
+
+- id: "garcia2024vectors"
+  type: "article"
+  year: 2024
+  authors:
+    - "Marcos A.G. Garcia"
+    - "Kunio Kaneta"
+    - "Wenqi Ke"
+    - "Yann Mambrini"
+    - "Keith A. Olive"
+    - "Sarunas Verner"
+  title: "The Role of Vectors in Reheating"
+  journal: "Journal of Cosmology and Astroparticle Physics"
+  volume: 2024
+  issue: 6
+  pages: "014"
+  doi: "10.1088/1475-7516/2024/06/014"
+  arxiv: "2311.14794"
+
+- id: "kanemura2024gravitational_waves"
+  type: "article"
+  year: 2024
+  authors:
+    - "Shinya Kanemura"
+    - "Kunio Kaneta"
+  title: "Gravitational Waves from Particle Decays During Reheating"
+  journal: "Physics Letters B"
+  volume: 855
+  pages: "138807"
+  doi: "10.1016/j.physletb.2024.138807"
+  arxiv: "2310.12023"
+
+# 2023
+- id: "kaneta2023spin32"
+  type: "article"
+  year: 2023
+  authors:
+    - "Kunio Kaneta"
+    - "Wenqi Ke"
+    - "Yann Mambrini"
+    - "Keith A. Olive"
+    - "Sarunas Verner"
+  title: "Gravitational Production of Spin-3/2 Particles During Reheating"
+  journal: "Physical Review D"
+  volume: 108
+  issue: 11
+  pages: "115027"
+  doi: "10.1103/PhysRevD.108.115027"
+  arxiv: "2309.15146"
+
+- id: "kaneta2023darkwave"
+  type: "article"
+  year: 2023
+  authors:
+    - "Kunio Kaneta"
+    - "Kin-ya Oda"
+    - "Motohiko Yoshimura"
+  title: "Gravitational and Dark Wave Emission at Binary Merger"
+  arxiv: "2306.07592"
+
+- id: "kaneta2023misalignment"
+  type: "article"
+  year: 2023
+  authors:
+    - "Kunio Kaneta"
+    - "Hye-Sung Lee"
+    - "Jiheon Lee"
+    - "Jaeok Yi"
+  title: "Misalignment Mechanism for a Mass-Varying Vector Boson"
+  journal: "Journal of Cosmology and Astroparticle Physics"
+  volume: 2023
+  issue: 9
+  pages: "017"
+  doi: "10.1088/1475-7516/2023/09/017"
+  arxiv: "2306.01291"
+
+- id: "kaneta2023higgs_reheating"
+  type: "article"
+  year: 2023
+  authors:
+    - "Kunio Kaneta"
+    - "Kin-ya Oda"
+  title: "Non-Thermal Higgs Spectrum in Reheating Epoch: Primordial Condensate vs. Stochastic Fluctuation"
+  journal: "Journal of Cosmology and Astroparticle Physics"
+  volume: 2023
+  issue: 10
+  pages: "048"
+  doi: "10.1088/1475-7516/2023/10/048"
+  arxiv: "2304.12578"
+
+- id: "kaneta2023jbd_constraints"
+  type: "article"
+  year: 2023
+  authors:
+    - "Kunio Kaneta"
+    - "Kin-ya Oda"
+    - "Motohiko Yoshimura"
+  title: "Constraints on Extended Jordan-Brans-Dicke Gravity"
+  journal: "Journal of Cosmology and Astroparticle Physics"
+  volume: 2023
+  issue: 10
+  pages: "040"
+  doi: "10.1088/1475-7516/2023/10/040"
+  arxiv: "2304.08656"
+
+- id: "kaneta2023edm"
+  type: "article"
+  year: 2023
+  authors:
+    - "Kunio Kaneta"
+    - "Natsumi Nagata"
+    - "Keith A. Olive"
+    - "Maxim Pospelov"
+    - "Liliana Velasco-Sevilla"
+  title: "Quantifying Limits on CP Violating Phases from EDMs in Supersymmetry"
+  journal: "Journal of High Energy Physics"
+  volume: 2023
+  issue: 3
+  pages: "250"
+  doi: "10.1007/JHEP03(2023)250"
+  arxiv: "2303.02822"
+
+- id: "anastasopoulos2023anomalous"
+  type: "article"
+  year: 2023
+  authors:
+    - "Pascal Anastasopoulos"
+    - "Kunio Kaneta"
+    - "Elias Kiritsis"
+    - "Yann Mambrini"
+  title: "Anomalous and Axial Z' Contributions to g-2"
+  journal: "Journal of High Energy Physics"
+  volume: 2023
+  issue: 2
+  pages: "051"
+  doi: "10.1007/JHEP02(2023)051"
+  arxiv: "2209.12947"
+
+- id: "kaneta2023gauged_quint"
+  type: "article"
+  year: 2023
+  authors:
+    - "Kunio Kaneta"
+    - "Hye-Sung Lee"
+    - "Jiheon Lee"
+    - "Jaeok Yi"
+  title: "Gauged Quintessence"
+  journal: "Journal of Cosmology and Astroparticle Physics"
+  volume: 2023
+  issue: 2
+  pages: "005"
+  doi: "10.1088/1475-7516/2023/02/005"
+  arxiv: "2208.09229"
+
+# 2022
+- id: "kaneta2022boltzmann"
+  type: "article"
+  year: 2022
+  authors:
+    - "Kunio Kaneta"
+    - "Sung Mook Lee"
+    - "Kin-ya Oda"
+  title: "Boltzmann or Bogoliubov? Approaches Compared in Gravitational Particle Production"
+  journal: "Journal of Cosmology and Astroparticle Physics"
+  volume: 2022
+  issue: 9
+  pages: "018"
+  doi: "10.1088/1475-7516/2022/09/018"
+  arxiv: "2206.10929"
+
+- id: "asai2022lfv"
+  type: "article"
+  year: 2022
+  authors:
+    - "K. Asai"
+    - "J. Fujimoto"
+    - "K. Kaneta"
+    - "Y. Kurihara"
+    - "S. Tsuno"
+  title: "Measuring Lepton Flavor Violation at LHC"
+  journal: "Physical Review D"
+  volume: 106
+  issue: 7
+  pages: "075014"
+  doi: "10.1103/PhysRevD.106.075014"
+  arxiv: "2112.00930"
+
+- id: "garcia2022freezein"
+  type: "article"
+  year: 2022
+  authors:
+    - "Marcos A.G. Garcia"
+    - "Kunio Kaneta"
+    - "Yann Mambrini"
+    - "Keith A. Olive"
+    - "Sarunas Verner"
+  title: "Freeze-In from Preheating"
+  journal: "Journal of Cosmology and Astroparticle Physics"
+  volume: 2022
+  issue: 3
+  pages: "016"
+  doi: "10.1088/1475-7516/2022/03/016"
+  arxiv: "2109.13280"
+
+# 2021
+- id: "kaneta2021conformal"
+  type: "article"
+  year: 2021
+  authors:
+    - "Kunio Kaneta"
+    - "Pyungwon Ko"
+    - "Wan-Il Park"
+  title: "Conformal Portal to Dark Matter"
+  journal: "Physical Review D"
+  volume: 104
+  issue: 7
+  pages: "075018"
+  doi: "10.1103/PhysRevD.104.075018"
+  arxiv: "2106.01923"
+
+- id: "brax2021metastable"
+  type: "article"
+  year: 2021
+  authors:
+    - "Philippe Brax"
+    - "Kunio Kaneta"
+    - "Yann Mambrini"
+    - "Mathias Pierre"
+  title: "Metastable Conformal Dark Matter"
+  journal: "Physical Review D"
+  volume: 103
+  issue: 11
+  pages: "115016"
+  doi: "10.1103/PhysRevD.103.115016"
+  arxiv: "2103.02615"
+
+- id: "garcia2021inflaton"
+  type: "article"
+  year: 2021
+  authors:
+    - "Marcos A.G. Garcia"
+    - "Kunio Kaneta"
+    - "Yann Mambrini"
+    - "Keith A. Olive"
+  title: "Inflaton Oscillations and Post-Inflationary Reheating"
+  journal: "Journal of Cosmology and Astroparticle Physics"
+  volume: 2021
+  issue: 4
+  pages: "012"
+  doi: "10.1088/1475-7516/2021/04/012"
+  arxiv: "2012.10756"
+
+- id: "brax2021disformal"
+  type: "article"
+  year: 2021
+  authors:
+    - "Philippe Brax"
+    - "Kunio Kaneta"
+    - "Yann Mambrini"
+    - "Mathias Pierre"
+  title: "Disformal Dark Matter"
+  journal: "Physical Review D"
+  volume: 103
+  issue: 1
+  pages: "015028"
+  doi: "10.1103/PhysRevD.103.015028"
+  arxiv: "2011.11647"
+
+# 2020
+- id: "anastasopoulos2020energy"
+  type: "article"
+  year: 2020
+  authors:
+    - "Pascal Anastasopoulos"
+    - "Kunio Kaneta"
+    - "Yann Mambrini"
+    - "Mathias Pierre"
+  title: "Energy-Momentum Portal to Dark Matter and Emergent Gravity"
+  journal: "Physical Review D"
+  volume: 102
+  issue: 5
+  pages: "055019"
+  doi: "10.1103/PhysRevD.102.055019"
+  arxiv: "2007.06534"
+
+- id: "hostert2020pair"
+  type: "article"
+  year: 2020
+  authors:
+    - "Matheus Hostert"
+    - "Kunio Kaneta"
+    - "Maxim Pospelov"
+  title: "Pair Production of Dark Particles in Meson Decays"
+  journal: "Physical Review D"
+  volume: 102
+  issue: 5
+  pages: "055016"
+  doi: "10.1103/PhysRevD.102.055016"
+  arxiv: "2005.07102"
+
+- id: "garcia2020reheating"
+  type: "article"
+  year: 2020
+  authors:
+    - "Marcos A.G. Garcia"
+    - "Kunio Kaneta"
+    - "Yann Mambrini"
+    - "Keith A. Olive"
+  title: "Reheating and Post-inflationary Production of Dark Matter"
+  journal: "Physical Review D"
+  volume: 101
+  issue: 12
+  pages: "123507"
+  doi: "10.1103/PhysRevD.101.123507"
+  arxiv: "2004.08404"
+
+- id: "kaneta2020inflation_leptogenesis"
+  type: "article"
+  year: 2020
+  authors:
+    - "Kunio Kaneta"
+    - "Yann Mambrini"
+    - "Keith A. Olive"
+    - "Sarunas Verner"
+  title: "Inflation and Leptogenesis in High-Scale Supersymmetry"
+  journal: "Physical Review D"
+  volume: 101
+  issue: 1
+  pages: "015002"
+  doi: "10.1103/PhysRevD.101.015002"
+  arxiv: "1911.02463"
+
+# 2019
+- id: "dudas2019rparity"
+  type: "article"
+  year: 2019
+  authors:
+    - "Emilian Dudas"
+    - "Tony Gherghetta"
+    - "Kunio Kaneta"
+    - "Yann Mambrini"
+    - "Keith A. Olive"
+  title: "Limits on R-parity Violation in High Scale Supersymmetry"
+  journal: "Physical Review D"
+  volume: 100
+  issue: 3
+  pages: "035004"
+  doi: "10.1103/PhysRevD.100.035004"
+  arxiv: "1905.09243"
+
+- id: "kaneta2019radiative"
+  type: "article"
+  year: 2019
+  authors:
+    - "Kunio Kaneta"
+    - "Yann Mambrini"
+    - "Keith A. Olive"
+  title: "Radiative Production of Non-thermal Dark Matter"
+  journal: "Physical Review D"
+  volume: 99
+  issue: 6
+  pages: "063508"
+  doi: "10.1103/PhysRevD.99.063508"
+  arxiv: "1901.04449"
+
+- id: "jinno2019hillclimbing_palatini"
+  type: "article"
+  year: 2019
+  authors:
+    - "Ryusuke Jinno"
+    - "Kunio Kaneta"
+    - "Kin-ya Oda"
+    - "Seong Chan Park"
+  title: "Hillclimbing Inflation in Metric and Palatini Formulations"
+  journal: "Physics Letters B"
+  volume: 791
+  pages: "396-402"
+  doi: "10.1016/j.physletb.2019.03.012"
+  arxiv: "1812.11077"
+
+# 2018
+- id: "ellis2018so10"
+  type: "article"
+  year: 2018
+  authors:
+    - "Sebastian A.R. Ellis"
+    - "Tony Gherghetta"
+    - "Kunio Kaneta"
+    - "Keith A. Olive"
+  title: "New Weak-Scale Physics from SO(10) with High-Scale Supersymmetry"
+  journal: "Physical Review D"
+  volume: 98
+  issue: 5
+  pages: "055009"
+  doi: "10.1103/PhysRevD.98.055009"
+  arxiv: "1807.06488"
+
+- id: "dudas2018gravitino"
+  type: "article"
+  year: 2018
+  authors:
+    - "Emilian Dudas"
+    - "Tony Gherghetta"
+    - "Kunio Kaneta"
+    - "Yann Mambrini"
+    - "Keith A. Olive"
+  title: "Gravitino Decay in High Scale Supersymmetry with R-parity Violation"
+  journal: "Physical Review D"
+  volume: 98
+  issue: 1
+  pages: "015030"
+  doi: "10.1103/PhysRevD.98.015030"
+  arxiv: "1805.07342"
+
+- id: "kamada2018sidm"
+  type: "article"
+  year: 2018
+  authors:
+    - "Ayuki Kamada"
+    - "Kunio Kaneta"
+    - "Keisuke Yanagi"
+    - "Hai-Bo Yu"
+  title: "Self-interacting Dark Matter and Muon g-2 in a Gauged U(1)_{L_mu - L_tau} Model"
+  journal: "Journal of High Energy Physics"
+  volume: 2018
+  issue: 6
+  pages: "117"
+  doi: "10.1007/JHEP06(2018)117"
+  arxiv: "1805.00651"
+
+- id: "kaneta2018coleman_weinberg"
+  type: "article"
+  year: 2018
+  authors:
+    - "Kunio Kaneta"
+    - "Osamu Seto"
+    - "Ryo Takahashi"
+  title: "Very Low Scale Coleman-Weinberg Inflation with Non-minimal Coupling"
+  journal: "Physical Review D"
+  volume: 97
+  issue: 6
+  pages: "063004"
+  doi: "10.1103/PhysRevD.97.063004"
+  arxiv: "1708.06455"
+
+- id: "jinno2018hillclimbing_higgs"
+  type: "article"
+  year: 2018
+  authors:
+    - "Ryusuke Jinno"
+    - "Kunio Kaneta"
+    - "Kin-ya Oda"
+  title: "Hillclimbing Higgs Inflation"
+  journal: "Physical Review D"
+  volume: 97
+  issue: 2
+  pages: "023523"
+  doi: "10.1103/PhysRevD.97.023523"
+  arxiv: "1705.03696"
+
+- id: "kadota2018sterile"
+  type: "article"
+  year: 2018
+  authors:
+    - "Kenji Kadota"
+    - "Kunio Kaneta"
+  title: "Sterile Neutrino Dark Matter from Right-handed Neutrino Oscillations"
+  journal: "Physical Review D"
+  volume: 97
+  issue: 11
+  pages: "115021"
+  doi: "10.1103/PhysRevD.97.115021"
+  arxiv: "1702.04526"
+
+# 2017
+- id: "kaneta2017darkphoton"
+  type: "article"
+  year: 2017
+  authors:
+    - "Kunio Kaneta"
+    - "Hye-Sung Lee"
+    - "Seokhoon Yun"
+  title: "Dark Photon Relic Dark Matter Production Through the Dark Axion Portal"
+  journal: "Physical Review D"
+  volume: 95
+  issue: 11
+  pages: "115032"
+  doi: "10.1103/PhysRevD.95.115032"
+  arxiv: "1704.07542"
+
+- id: "jinno2017hillclimbing"
+  type: "article"
+  year: 2017
+  authors:
+    - "Ryusuke Jinno"
+    - "Kunio Kaneta"
+  title: "Hill-climbing Inflation"
+  journal: "Physical Review D"
+  volume: 96
+  issue: 4
+  pages: "043518"
+  doi: "10.1103/PhysRevD.96.043518"
+  arxiv: "1703.09020"
+
+- id: "kaneta2017portal"
+  type: "article"
+  year: 2017
+  authors:
+    - "Kunio Kaneta"
+    - "Hye-Sung Lee"
+    - "Seokhoon Yun"
+  title: "Portal Connecting Dark Photons and Axions"
+  journal: "Physical Review Letters"
+  volume: 118
+  issue: 10
+  pages: "101802"
+  doi: "10.1103/PhysRevLett.118.101802"
+  arxiv: "1611.01466"
+
+- id: "kaneta2017rhn_darkmat"
+  type: "article"
+  year: 2017
+  authors:
+    - "Kunio Kaneta"
+    - "Zhaofeng Kang"
+    - "Hye-Sung Lee"
+  title: "Right-handed Neutrino Dark Matter Under the B-L Gauge Interaction"
+  journal: "Journal of High Energy Physics"
+  volume: 2017
+  issue: 2
+  pages: "031"
+  doi: "10.1007/JHEP02(2017)031"
+  arxiv: "1606.09317"
+
+# 2016
+- id: "harigaya2016thermal"
+  type: "article"
+  year: 2016
+  authors:
+    - "Keisuke Harigaya"
+    - "Masahiro Ibe"
+    - "Kunio Kaneta"
+    - "Wakutaka Nakano"
+    - "Motoo Suzuki"
+  title: "Thermal Relic Dark Matter Beyond the Unitarity Limit"
+  journal: "Journal of High Energy Physics"
+  volume: 2016
+  issue: 8
+  pages: "151"
+  doi: "10.1007/JHEP08(2016)151"
+  arxiv: "1606.00159"
+
+- id: "kanemura2016composite_higgs"
+  type: "article"
+  year: 2016
+  authors:
+    - "Shinya Kanemura"
+    - "Kunio Kaneta"
+    - "Naoki Machida"
+    - "Shinya Odori"
+    - "Tetsuo Shindou"
+  title: "Single and Double Production of the Higgs Boson at Hadron and Lepton Colliders in Minimal Composite Higgs Models"
+  journal: "Physical Review D"
+  volume: 94
+  issue: 1
+  pages: "015028"
+  doi: "10.1103/PhysRevD.94.015028"
+  arxiv: "1603.05588"
+
+- id: "kaneta2016diphoton"
+  type: "article"
+  year: 2016
+  authors:
+    - "Kunio Kaneta"
+    - "Subeom Kang"
+    - "Hye-Sung Lee"
+  title: "Diphoton Excess at the LHC Run 2 and Its Implications for a New Heavy Gauge Boson"
+  journal: "International Journal of Modern Physics A"
+  volume: 31
+  issue: 27
+  pages: "1650159"
+  arxiv: "1512.09129"
+
+# 2015
+- id: "kaneta2015probing"
+  type: "proceedings"
+  year: 2015
+  authors:
+    - "Kunio Kaneta"
+  title: "Probing Composite Higgs Models by Measuring Phase Shifts at LHC"
+  arxiv: "1504.07966"
+
+- id: "ibe2015leptogenesis"
+  type: "article"
+  year: 2015
+  authors:
+    - "Masahiro Ibe"
+    - "Kunio Kaneta"
+  title: "Spontaneous Thermal Leptogenesis via Majoron Oscillation"
+  journal: "Physical Review D"
+  volume: 92
+  issue: 3
+  pages: "035019"
+  doi: "10.1103/PhysRevD.92.035019"
+  arxiv: "1504.04125"
+
+- id: "aizawa2015coupling"
+  type: "article"
+  year: 2015
+  authors:
+    - "Tasuku Aizawa"
+    - "Masahiro Ibe"
+    - "Kunio Kaneta"
+  title: "Coupling Unification and Dark Matter in a Standard Model Extension with Adjoint Majorana Fermions"
+  journal: "Physical Review D"
+  volume: 91
+  issue: 7
+  pages: "075012"
+  doi: "10.1103/PhysRevD.91.075012"
+  arxiv: "1411.6044"
+
+- id: "kanemura2015resonance"
+  type: "article"
+  year: 2015
+  authors:
+    - "Shinya Kanemura"
+    - "Kunio Kaneta"
+    - "Naoki Machida"
+    - "Tetsuo Shindou"
+  title: "New Resonance Scale and Fingerprint Identification in Minimal Composite Higgs Models"
+  journal: "Physical Review D"
+  volume: 91
+  pages: "115016"
+  doi: "10.1103/PhysRevD.91.115016"
+  arxiv: "1410.8413"
+
+- id: "haba2015gravitational"
+  type: "article"
+  year: 2015
+  authors:
+    - "Naoyuki Haba"
+    - "Kunio Kaneta"
+    - "Ryo Takahashi"
+    - "Yuya Yamaguchi"
+  title: "Gravitational Effects on Vanishing Higgs Potential at the Planck Scale"
+  journal: "Physical Review D"
+  volume: 91
+  issue: 1
+  pages: "016004"
+  doi: "10.1103/PhysRevD.91.016004"
+  arxiv: "1408.5548"
+
+# 2014
+- id: "ibe2014neutrino_absorption"
+  type: "article"
+  year: 2014
+  authors:
+    - "Masahiro Ibe"
+    - "Kunio Kaneta"
+  title: "Cosmic Neutrino Background Absorption Line in the Neutrino Spectrum at IceCube"
+  journal: "Physical Review D"
+  volume: 90
+  issue: 5
+  pages: "053011"
+  doi: "10.1103/PhysRevD.90.053011"
+  arxiv: "1407.2848"
+
+- id: "haba2014vanishing"
+  type: "article"
+  year: 2014
+  authors:
+    - "Naoyuki Haba"
+    - "Hiroyuki Ishida"
+    - "Kunio Kaneta"
+    - "Ryo Takahashi"
+  title: "Vanishing Higgs Potential at the Planck Scale in a Singlet Extension of the Standard Model"
+  journal: "Physical Review D"
+  volume: 90
+  pages: "036006"
+  doi: "10.1103/PhysRevD.90.036006"
+  arxiv: "1406.0158"
+
+- id: "harigaya2014highscale_susy"
+  type: "article"
+  year: 2014
+  authors:
+    - "Keisuke Harigaya"
+    - "Masahiro Ibe"
+    - "Koji Ichikawa"
+    - "Kunio Kaneta"
+    - "Shigeki Matsumoto"
+  title: "High-Scale SUSY Breaking Models in Light of the BICEP2 Result"
+  journal: "Journal of High Energy Physics"
+  volume: 2014
+  issue: 7
+  pages: "093"
+  doi: "10.1007/JHEP07(2014)093"
+  arxiv: "1403.5880"
+
+- id: "harigaya2014gaugino"
+  type: "article"
+  year: 2014
+  authors:
+    - "Keisuke Harigaya"
+    - "Kunio Kaneta"
+    - "Shigeki Matsumoto"
+  title: "Gaugino Coannihilations"
+  journal: "Physical Review D"
+  volume: 89
+  issue: 11
+  pages: "115021"
+  doi: "10.1103/PhysRevD.89.115021"
+  arxiv: "1403.0715"
+
+- id: "haba2014rge_neutrino"
+  type: "article"
+  year: 2014
+  authors:
+    - "Naoyuki Haba"
+    - "Kunio Kaneta"
+    - "Ryo Takahashi"
+    - "Yuya Yamaguchi"
+  title: "Accurate Renormalization Group Analyses in Neutrino Sector"
+  journal: "Nuclear Physics B"
+  volume: 885
+  pages: "180-195"
+  doi: "10.1016/j.nuclphysb.2014.05.022"
+  arxiv: "1402.4126"
+
+- id: "haba2014planck_singlet"
+  type: "article"
+  year: 2014
+  authors:
+    - "Naoyuki Haba"
+    - "Kunio Kaneta"
+    - "Ryo Takahashi"
+  title: "Planck Scale Boundary Conditions in the Standard Model with Singlet Scalar Dark Matter"
+  journal: "Journal of High Energy Physics"
+  volume: 2014
+  issue: 4
+  pages: "029"
+  doi: "10.1007/JHEP04(2014)029"
+  arxiv: "1312.2089"
+
+- id: "haba2014higgs_pair"
+  type: "article"
+  year: 2014
+  authors:
+    - "Naoyuki Haba"
+    - "Kunio Kaneta"
+    - "Yukihiro Mimura"
+    - "Enkhbat Tsedenbaljir"
+  title: "Higgs Pair Production at the LHC and ILC from General Potential"
+  journal: "Physical Review D"
+  volume: 89
+  issue: 1
+  pages: "015018"
+  doi: "10.1103/PhysRevD.89.015018"
+  arxiv: "1311.0067"
+
+- id: "haba2014nnmsm2"
+  type: "article"
+  year: 2014
+  authors:
+    - "Naoyuki Haba"
+    - "Kunio Kaneta"
+    - "Ryo Takahashi"
+  title: "NNMSM Type-II and III"
+  journal: "European Physical Journal C"
+  volume: 74
+  pages: "2696"
+  doi: "10.1140/epjc/s10052-013-2696-z"
+  arxiv: "1309.3254"
+
+- id: "haba2014nnmsm"
+  type: "article"
+  year: 2014
+  authors:
+    - "Naoyuki Haba"
+    - "Kunio Kaneta"
+    - "Ryo Takahashi"
+  title: "Next to New Minimal Standard Model"
+  journal: "Physics Letters B"
+  volume: 734
+  pages: "220-226"
+  doi: "10.1016/j.physletb.2014.05.016"
+  arxiv: "1309.1231"
+
+# 2013
+- id: "haba2013diphoton_higgs"
+  type: "article"
+  year: 2013
+  authors:
+    - "Naoyuki Haba"
+    - "Kunio Kaneta"
+    - "Yukihiro Mimura"
+    - "Ryo Takahashi"
+  title: "Enhancement of Higgs to Diphoton Decay Width in Non-Perturbative Higgs Model"
+  journal: "Physics Letters B"
+  volume: 718
+  pages: "1441-1446"
+  doi: "10.1016/j.physletb.2012.12.049"
+  arxiv: "1207.5102"
+
+- id: "haba2013qcd_warped"
+  type: "article"
+  year: 2013
+  authors:
+    - "Naoyuki Haba"
+    - "Kunio Kaneta"
+    - "Soshi Tsuno"
+  title: "QCD Parity Violation at LHC in Warped Extra Dimension"
+  journal: "Physical Review D"
+  volume: 87
+  issue: 9
+  pages: "095002"
+  doi: "10.1103/PhysRevD.87.095002"
+  arxiv: "1211.5411"
+
+- id: "haba2013leptonic"
+  type: "article"
+  year: 2013
+  authors:
+    - "Naoyuki Haba"
+    - "Kunio Kaneta"
+    - "Ryo Takahashi"
+  title: "Stability of Leptonic Self-Complementarity"
+  journal: "Europhysics Letters"
+  volume: 101
+  issue: 1
+  pages: "11001"
+  doi: "10.1209/0295-5075/101/11001"
+  arxiv: "1209.1522"
+
+- id: "haba2013qcd_quarkonium"
+  type: "article"
+  year: 2013
+  authors:
+    - "Naoyuki Haba"
+    - "Kunio Kaneta"
+    - "Tetsuya Onogi"
+  title: "QCD Parity Violation in a Quarkonium via SUSY"
+  journal: "Acta Physica Polonica B"
+  volume: 44
+  pages: "733-760"
+  doi: "10.5506/APhysPolB.44.733"
+  arxiv: "1109.5442"
+
+# 2012
+- id: "haba2012susy_su5"
+  type: "article"
+  year: 2012
+  authors:
+    - "Naoyuki Haba"
+    - "Kunio Kaneta"
+    - "Yasuhiro Shimizu"
+  title: "Phenomenology of Supersymmetry SU(5) GUT with Neutrinophilic Higgs Boson"
+  journal: "Physical Review D"
+  volume: 86
+  pages: "015019"
+  doi: "10.1103/PhysRevD.86.015019"
+  arxiv: "1204.4254"
+
+- id: "haba2012neutrinophilic_proc"
+  type: "proceedings"
+  year: 2012
+  authors:
+    - "Naoyuki Haba"
+    - "Kunio Kaneta"
+    - "Yasuhiro Shimizu"
+  title: "Phenomenology of Neutrinophilic Higgs GUT"
+  booktitle: "AIP Conference Proceedings"
+  volume: 1467
+  pages: "247-250"
+  doi: "10.1063/1.4742109"
+
+- id: "haba2012parity_qcd"
+  type: "article"
+  year: 2012
+  authors:
+    - "Naoyuki Haba"
+    - "Kunio Kaneta"
+    - "Shigeki Matsumoto"
+    - "Takehiro Nabeshima"
+    - "Soshi Tsuno"
+  title: "Parity Violation in QCD Process"
+  journal: "Physical Review D"
+  volume: 85
+  pages: "014007"
+  doi: "10.1103/PhysRevD.85.014007"
+  arxiv: "1109.5082"
+
+- id: "haba2012effective_operators"
+  type: "article"
+  year: 2012
+  authors:
+    - "N. Haba"
+    - "K. Kaneta"
+    - "S. Matsumoto"
+    - "T. Nabeshima"
+  title: "A Simple Method of Calculating Effective Operators"
+  journal: "Acta Physica Polonica B"
+  volume: 43
+  pages: "405-444"
+  doi: "10.5506/APhysPolB.43.405"
+  arxiv: "1106.6106"
+
+# 2011
+- id: "haba2011tev_seesaw"
+  type: "article"
+  year: 2011
+  authors:
+    - "Naoyuki Haba"
+    - "Tomohiro Horita"
+    - "Kunio Kaneta"
+    - "Yukihiro Mimura"
+  title: "TeV-Scale Seesaw with Non-Negligible Left-Right Neutrino Mixings"
+  arxiv: "1110.2252"
+
+# 2010
+- id: "kaneta2010fermion"
+  type: "article"
+  year: 2010
+  authors:
+    - "Kunio Kaneta"
+    - "Yoshiharu Kawamura"
+  title: "Fermion Mass Hierarchy in Lifshitz Type Gauge Theory"
+  journal: "Modern Physics Letters A"
+  volume: 25
+  pages: "1613-1623"
+  doi: "10.1142/S021773231003327X"
+  arxiv: "0909.2920"

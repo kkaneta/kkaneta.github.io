@@ -1,0 +1,32 @@
+{
+  "name": "academic-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "hugo server --buildDrafts --disableFastRender --baseURL 'http://localhost:1313/'",
+    "build": "hugo --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kkaneta/academic-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kkaneta/academic-site/issues"
+  },
+  "homepage": "https://github.com/kkaneta/academic-site#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.1",
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.24",
+    "tailwindcss": "^4.2.1"
+  },
+  "dependencies": {
+    "@parcel/watcher-darwin-arm64": "^2.5.6"
+  }
+}

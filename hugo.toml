@@ -1,0 +1,58 @@
+baseURL = "https://kaneta.github.io/"
+title = "Kaneta Kunio"
+defaultContentLanguage = "ja"
+defaultContentLanguageInSubdir = false
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.116.0"
+
+[build]
+  writeStats = true
+
+disableKinds = ["taxonomy", "term", "RSS"]
+
+[outputs]
+  home = ["HTML"]
+  page = ["HTML"]
+  section = ["HTML"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [["\\[", "\\]"], ["$$", "$$"]]
+          inline = [["\\(", "\\)"], ["$", "$"]]
+  [markup.highlight]
+    style = "github"
+    lineNos = false
+
+[languages]
+  [languages.ja]
+    languageCode = "ja"
+    languageName = "日本語"
+    weight = 1
+    [languages.ja.params]
+      description = "金田邦雄のウェブサイト"
+
+  [languages.en]
+    languageCode = "en"
+    languageName = "English"
+    contentDir = "content/en"
+    weight = 2
+    [languages.en.params]
+      description = "Kunio Kaneta's Website"
+
+[params]
+  author = "Kunio Kaneta"
+  authorDisplay = "Kaneta Kunio"
+  institution_ja = "新潟大学教育学部"
+  institution_en = "Faculty of Education, Niigata University"
+  email = "kaneta[at]ed.niigata-u.ac.jp"
+  github = "https://github.com/kkaneta"
+  googleScholar = ""
+  orcid = ""
+  ogImage = "/images/og-default.png"

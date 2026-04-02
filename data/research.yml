@@ -1,0 +1,239 @@
+# Research themes based on publications listed on INSPIRE-HEP (https://inspirehep.net/authors/1078184)
+
+- id: "inflation"
+  title:
+    ja: "インフレーション宇宙論と宇宙再加熱"
+    en: "Inflationary Cosmology and Cosmic Reheating"
+  description:
+    ja: |
+      初期宇宙の指数関数的膨張（インフレーション）をもたらすスカラー場（インフラトン）のダイナミクスを研究しています。Starobinsky型模型やno-scale超重力、ヒルクライミング型・Coleman-Weinberg型インフレーションなどの様々なインフレーション模型の構築、および量子補正（輻射補正）がインフラトンポテンシャルおよびCMB観測量（スペクトル指数・テンソルスカラー比）に与える影響を精密に評価しています。Plank衛星やACTなどの観測データとの比較を通じて、インフラトンと他の場との結合定数・再加熱温度に制限を与え、インフレーションモデルの選別を行います。
+    en: |
+      We study the dynamics of the inflaton field responsible for the exponential expansion (inflation) of the early universe. We examine a range of inflationary models including Starobinsky inflation, no-scale supergravity, hill-climbing, and Coleman-Weinberg inflation. A particular focus is given to the precise evaluation of quantum (radiative) corrections to the inflaton potential and their impact on CMB observables such as the spectral index and the tensor-to-scalar ratio. Confronting these predictions with Planck and ACT data allows us to constrain inflaton couplings to other fields and the reheating temperature, discriminating among competing models.
+  keywords:
+    - "Inflation"
+    - "Supergravity"
+    - "Starobinsky Model"
+    - "CMB Observables"
+    - "Radiative Corrections"
+    - "No-Scale Supergravity"
+  math: true
+  equation: "n_s = 1 - \\frac{2}{N}, \\quad r = \\frac{12}{N^2}"
+  papers:
+    - arxiv: "2603.02389"
+      title: "Radiative Corrections in Supergravity Models of Inflation"
+      year: 2026
+    - arxiv: "2510.15137"
+      title: "Effects of Radiative Corrections on Starobinsky Inflation"
+      year: 2025
+      journal: "Phys. Rev. D 112, 123530"
+    - arxiv: "1911.02463"
+      title: "Inflation and Leptogenesis in High-Scale Supersymmetry"
+      year: 2020
+      journal: "Phys. Rev. D 101, 015002"
+    - arxiv: "1812.11077"
+      title: "Hill-Climbing Inflation in Metric and Palatini Formulations"
+      year: 2019
+      journal: "Phys. Lett. B 791, 396"
+    - arxiv: "1708.06455"
+      title: "Very Low Scale Coleman-Weinberg Inflation with Non-Minimal Coupling"
+      year: 2018
+      journal: "Phys. Rev. D 97, 063004"
+    - arxiv: "1705.03696"
+      title: "Hill-Climbing Higgs Inflation"
+      year: 2018
+      journal: "Phys. Rev. D 97, 023523"
+
+- id: "reheating"
+  title:
+    ja: "宇宙の再加熱と粒子生成"
+    en: "Cosmic Reheating and Particle Production"
+  description:
+    ja: |
+      インフレーション終了後、インフラトン凝縮体が振動・崩壊しながら標準模型粒子を生成し宇宙を熱化させる過程（再加熱）を研究しています。重力相互作用のみによる非熱的粒子生成のスペクトルと数密度を解析的・数値的に導出するほか、ヒッグス場や擬南部ゴールドストーンボゾン（アクシオン候補）の非熱的生成についても研究しています。また、インフラトン振動によるパラメトリック共鳴（プレヒーティング）や右巻きニュートリノの非摂動的生成を扱い、この時代に放出される超高周波重力波の予言も行っています。再加熱温度は後のバリオン生成や暗黒物質の存在量と直結するため、インフレーションモデルと観測宇宙論を橋渡しする重要な役割を担います。
+    en: |
+      After inflation ends, the inflaton condensate oscillates and decays, thermalizing the universe through a process called reheating. We analytically and numerically
+      compute the spectra and number densities of particles produced purely through gravitational interactions, as well as the non-thermal production of Higgs bosons and pseudo-Nambu-Goldstone bosons (axion candidates). We also investigate parametric resonance (preheating) driven by inflaton oscillations, including non-perturbative production of right-handed neutrinos, and predict the ultra-high-frequency gravitational waves emitted during this epoch. Since the reheating temperature is directly linked to baryogenesis and dark matter abundances, this research plays a crucial bridging role between inflationary models and observational cosmology.
+  keywords:
+    - "Reheating"
+    - "Preheating"
+    - "Gravitational Production"
+    - "Non-Thermal Spectrum"
+    - "Gravitino"
+    - "Gravitational Waves"
+    - "Parametric Resonance"
+  math: true
+  equation: "|\\beta_k|^2 \\propto \\left(\\frac{H_e}{k}\\right)^{6}"
+  papers:
+    - arxiv: "2508.20402"
+      title: "Post-Reheating Inflaton Production as a Probe of Reheating Dynamics"
+      year: 2025
+    - arxiv: "2508.00315"
+      title: "On the Gravitational Waves from Super Massive RHNs Produced at Preheating"
+      year: 2025
+    - arxiv: "2408.08605"
+      title: "Parametrically Amplified Super-Radiance Towards Hot Big Bang Universe"
+      year: 2024
+      journal: "Phys. Lett. B 859, 139133"
+    - arxiv: "2406.09045"
+      title: "Pseudo-Nambu-Goldstone Boson Production from Inflaton Coupling During Reheating"
+      year: 2024
+      journal: "JCAP 11, 058"
+    - arxiv: "2311.14794"
+      title: "The Role of Vectors in Reheating"
+      year: 2024
+      journal: "JCAP 6, 014"
+    - arxiv: "2310.12023"
+      title: "Gravitational Waves from Particle Decays During Reheating"
+      year: 2024
+      journal: "Phys. Lett. B 855, 138807"
+    - arxiv: "2309.15146"
+      title: "Gravitational Production of Spin-3/2 Particles During Reheating"
+      year: 2023
+      journal: "Phys. Rev. D 108, 115027"
+    - arxiv: "2304.12578"
+      title: "Non-Thermal Higgs Spectrum in Reheating Epoch"
+      year: 2023
+      journal: "JCAP 10, 048"
+    - arxiv: "2012.10756"
+      title: "Inflaton Oscillations and Post-Inflationary Reheating"
+      year: 2021
+      journal: "JCAP 04, 012"
+
+- id: "dark-matter"
+  title:
+    ja: "暗黒物質の生成機構と粒子論的性質"
+    en: "Dark Matter Production Mechanisms and Particle Properties"
+  description:
+    ja: |
+      宇宙の質量の約85%を占める暗黒物質の生成機構と粒子論的性質を研究しています。熱平衡に依らない非熱的生成過程——重力散乱・コンフォーマルポータル（Riccスカラー
+      への非最小結合）・ディスフォーマル変換・輻射補正による生成——に着目し、様々なスピンを持つ暗黒物質候補（スカラー、ベクトル、フェルミオン、スピン3/2ラリトロン）の残存量を計算しています。これらは再加熱温度・インフラトン結合定数・暗黒物質質量を結びつける包括的な枠組みを与え、将来の直接・間接探索実験への橋渡しとなります。超重力理論における高質量スケールの超対称性の破れが暗黒物質シナリオをどのように制約するかも合わせて解析しています。
+    en: |
+      We study the production mechanisms and particle properties of dark matter, which constitutes approximately 85% of the matter density of the universe. Our focus lies on non-thermal production processes that do not rely on thermal equilibrium: gravitational scattering, the conformal portal (non-minimal coupling to the Ricci scalar), disformal transformations between metrics, and radiative production during reheating. For each mechanism we compute relic abundances of dark matter candidates with various spins including scalars, vectors, fermions, and the spin-3/2 raritron. These results establish a unified connection between the reheating temperature, inflaton couplings, and dark matter mass, paving the way for confrontation with future direct and indirect detection experiments. We also analyze how high-scale supersymmetry breaking in supergravity constrains dark matter scenarios.
+  keywords:
+    - "Dark Matter"
+    - "Non-Thermal Production"
+    - "Gravitational Production"
+    - "Conformal Portal"
+    - "Disformal Transformation"
+    - "Relic Abundance"
+  math: true
+  equation: "\\Omega_{\\rm DM} h^2 \\propto \\frac{m_{\\rm DM} T_{\\rm reh}^{n+1}}{\\Lambda^{n+2}}"
+  papers:
+    - arxiv: "2106.01923"
+      title: "Conformal Portal to Dark Matter"
+      year: 2021
+      journal: "Phys. Rev. D 104, 075018"
+    - arxiv: "2103.02615"
+      title: "Metastable Conformal Dark Matter"
+      year: 2021
+      journal: "Phys. Rev. D 103, 115016"
+    - arxiv: "2011.11647"
+      title: "Disformal Dark Matter"
+      year: 2021
+      journal: "Phys. Rev. D 103, 015028"
+    - arxiv: "2004.08404"
+      title: "Reheating and Post-Inflationary Production of Dark Matter"
+      year: 2020
+      journal: "Phys. Rev. D 101, 123507"
+    - arxiv: "1901.04449"
+      title: "Radiative Production of Non-Thermal Dark Matter"
+      year: 2019
+      journal: "Phys. Rev. D 99, 063508"
+    - arxiv: "2309.15146"
+      title: "Gravitational Production of Spin-3/2 Particles During Reheating"
+      year: 2023
+      journal: "Phys. Rev. D 108, 115027"
+    - arxiv: "2311.14794"
+      title: "The Role of Vectors in Reheating"
+      year: 2024
+      journal: "JCAP 6, 014"
+
+# - id: "dark-energy"
+#   title:
+#     ja: "ゲージ対称性を持つ暗黒エネルギー（ゲージドクインテッセンス）"
+#     en: "Dark Energy Under a Gauge Symmetry (Gauged Quintessence)"
+#   description:
+#     ja: |
+#       現在の宇宙の加速膨張を引き起こす「暗黒エネルギー」を、U(1)ゲージ対称性を
+#       持つスカラー場（クインテッセンス）として記述するモデルを研究しています。
+#       ゲージボソン（暗黒光子）との結合により、純粋な重力的相互作用を超えた
+#       観測可能なシグナル——第五の力、暗黒光子探索、ハッブル定数問題への示唆——が
+#       生まれます。さらに質量が時間変化するベクトル場がミスアラインメント機構で
+#       暗黒物質を生成できることも示しています。
+#     en: |
+#       We model dark energy — the driver of the present cosmic acceleration — as a
+#       quintessence scalar field subject to a U(1) gauge symmetry. Coupling to a
+#       gauge boson (dark photon) opens non-gravitational observational channels:
+#       fifth-force constraints, dark photon searches, and implications for the Hubble
+#       tension. We also demonstrate that a mass-varying vector field can produce dark
+#       matter via the misalignment mechanism when the mass varies due to coupling
+#       with a quintessence-like scalar.
+#   keywords:
+#     - "Dark Energy"
+#     - "Quintessence"
+#     - "Gauge Symmetry"
+#     - "Dark Photon"
+#     - "Hubble Tension"
+#     - "Vector Dark Matter"
+#     - "Misalignment Mechanism"
+#   math: false
+#   papers:
+#     - arxiv: "2504.04820"
+#       title: "Dark Energy Under a Gauge Symmetry: A Review of Gauged Quintessence"
+#       year: 2025
+#       journal: "Int. J. Mod. Phys. A 40, 2530009"
+#     - arxiv: "2312.09717"
+#       title: "Non-Gravitational Signals of Dark Energy Under a Gauge Symmetry"
+#       year: 2024
+#       journal: "JCAP 3, 048"
+#     - arxiv: "2306.01291"
+#       title: "Misalignment Mechanism for a Mass-Varying Vector Boson"
+#       year: 2023
+#       journal: "JCAP 9, 017"
+
+# - id: "scalar-tensor-gravity"
+#   title:
+#     ja: "拡張スカラーテンソル重力とインフレーション・暗黒エネルギーの統一"
+#     en: "Extended Scalar-Tensor Gravity: Unifying Inflation and Dark Energy"
+#   description:
+#     ja: |
+#       一般相対性理論をスカラー場と非最小結合させた「スカラーテンソル重力」——特に
+#       独立なコンフォーマル因子をゲージ不変な成分ごとに割り当てる拡張
+#       Jordan-Brans-Dicke（eJBD）理論——を研究しています。この枠組みでは、
+#       初期宇宙のインフレーションと現在の加速膨張を同一の理論で自然に説明できます。
+#       第五の力探索・連星合体における重力波・暗黒波放射などの観測的検証法も
+#       提案しています。
+#     en: |
+#       We study scalar-tensor gravity — general relativity extended with a scalar field
+#       non-minimally coupled to geometry — in particular an extended Jordan-Brans-Dicke
+#       (eJBD) framework that assigns independent conformal factors to gauge-invariant
+#       field components. This framework provides a unified description of early-time
+#       inflation and late-time dark energy within a single theory. We also propose
+#       observational tests via fifth-force searches, gravitational waves, and dark
+#       scalar-wave emission from compact binary mergers.
+#   keywords:
+#     - "Scalar-Tensor Gravity"
+#     - "Jordan-Brans-Dicke Theory"
+#     - "Inflation"
+#     - "Dark Energy"
+#     - "Fifth Force"
+#     - "Gravitational Waves"
+#   math: true
+#   equation: "S = \\int d^4x \\sqrt{-g}\\left[\\frac{F(\\phi)}{2}R - \\frac{1}{2}(\\partial\\phi)^2 - V(\\phi)\\right]"
+#   papers:
+#     - arxiv: "2503.02409"
+#       title: "A Common Origin of Two Accelerating Universes: Inflation and Dark Energy"
+#       year: 2025
+#     - arxiv: "2505.08286"
+#       title: "Observational Tests for a Class of Scalar-Tensor Gravity"
+#       year: 2025
+#     - arxiv: "2405.13402"
+#       title: "Accelerating Universe at Early and Late Times in Extended Jordan-Brans-Dicke Gravity"
+#       year: 2024
+#       journal: "Phys. Rev. D 110, 043518"
+#     - arxiv: "2306.07592"
+#       title: "Gravitational and Dark Wave Emission at Binary Merger"
+#       year: 2023
+#     - title: "Cosmological Analysis of Extended Jordan-Brans-Dicke Gravity"
+#       year: 2023
+#       journal: "JCAP 10, 040"

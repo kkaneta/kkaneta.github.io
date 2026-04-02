@@ -1,0 +1,161 @@
+# lang フィールド:
+#   ["ja"]      → 日本語ページのみ表示
+#   ["ja","en"] → 両言語で表示
+#   ["en"]      → 英語ページのみ表示
+
+# 2026
+- id: "260K6140"
+  year: 2026
+  semester:
+    ja: "通年"
+    en: "All Year"
+  title:
+    ja: "卒業研究"
+    en: "Graduation Thesis"
+  level:
+    ja: "学部4年"
+    en: "Undergraduate (4th year)"
+  lang: ["ja", "en"]
+  url: "https://syllabus.niigata-u.ac.jp/syllabusHtml/2026/03/03_260K6140_ja_JP.html"
+
+- id: "260K5801"
+  year: 2026
+  semester:
+    ja: "後期"
+    en: "Fall"
+  title:
+    ja: "基礎物理学実験"
+    en: "Basic Physics Experiment"
+  level:
+    ja: "学部2〜6年"
+    en: "Undergraduate (2nd-6th year)"
+  lang: ["ja", "en"]
+  url: "https://syllabus.niigata-u.ac.jp/syllabusHtml/2026/03/03_260K5801_ja_JP.html"
+
+- id: "260K5805"
+  year: 2026
+  semester:
+    ja: "前期"
+    en: "Spring"
+  title:
+    ja: "物理学セミナー"
+    en: "Physics Seminar"
+  level:
+    ja: "学部3〜6年"
+    en: "Undergraduate (3rd-6th year)"
+  lang: ["ja", "en"]
+  url: "https://syllabus.niigata-u.ac.jp/syllabusHtml/2026/03/03_260K5805_ja_JP.html"
+
+- id: "260F3174, 260Y3106"
+  year: 2026
+  semester:
+    ja: "前期"
+    en: "Spring"
+  title:
+    ja: "宇宙素粒子物理学概論（大学院）"
+    en: "Astroparticle Physics (Graduate)"
+  level:
+    ja: "大学院"
+    en: "Graduate"
+  lang: ["ja", "en"]
+  url: "https://syllabus.niigata-u.ac.jp/syllabusHtml/2026/28/28_260F3174_ja_JP.html"
+
+# 2025
+- id: "250K6140"
+  year: 2025
+  semester:
+    ja: "通年"
+    en: "All Year"
+  title:
+    ja: "卒業研究"
+    en: "Graduation Thesis"
+  level:
+    ja: "学部4年"
+    en: "Undergraduate (4th year)"
+  lang: ["ja", "en"]
+  url: "https://syllabus.niigata-u.ac.jp/syllabusHtml/2025/03/03_250K6140_ja_JP.html"
+
+- id: "250K5801"
+  year: 2025
+  semester:
+    ja: "後期"
+    en: "Fall"
+  title:
+    ja: "基礎物理学実験"
+    en: "Basic Physics Experiment"
+  level:
+    ja: "学部2〜6年"
+    en: "Undergraduate (2nd-6th year)"
+  lang: ["ja", "en"]
+  url: "https://syllabus.niigata-u.ac.jp/syllabusHtml/2025/03/03_250K5801_ja_JP.html"
+
+- id: "250K5805"
+  year: 2025
+  semester:
+    ja: "前期"
+    en: "Spring"
+  title:
+    ja: "物理学セミナー"
+    en: "Physics Seminar"
+  level:
+    ja: "学部3〜6年"
+    en: "Undergraduate (3rd-6th year)"
+  lang: ["ja", "en"]
+  url: "https://syllabus.niigata-u.ac.jp/syllabusHtml/2025/03/03_250K5805_ja_JP.html"
+
+- id: "250F3174"
+  year: 2025
+  semester:
+    ja: "前期"
+    en: "Spring"
+  title:
+    ja: "宇宙素粒子物理学概論（大学院）"
+    en: "Astroparticle Physics (Graduate)"
+  level:
+    ja: "大学院"
+    en: "Graduate"
+  lang: ["ja", "en"]
+  url: "https://syllabus.niigata-u.ac.jp/syllabusHtml/2025/28/28_250F3174_ja_JP.html"
+
+# 2024
+- id: "240K6140"
+  year: 2024
+  semester:
+    ja: "通年"
+    en: "All Year"
+  title:
+    ja: "卒業研究"
+    en: "Graduation Thesis"
+  level:
+    ja: "学部4年"
+    en: "Undergraduate (4th year)"
+  lang: ["ja", "en"]
+  url: "https://syllabus.niigata-u.ac.jp/syllabusHtml/2024/03/03_240K6140_ja_JP.html"
+
+- id: "240K5801"
+  year: 2024
+  semester:
+    ja: "後期"
+    en: "Fall"
+  title:
+    ja: "基礎物理学実験"
+    en: "Basic Physics Experiment"
+  level:
+    ja: "学部2〜6年"
+    en: "Undergraduate (2nd-6th year)"
+  lang: ["ja", "en"]
+  url: "https://syllabus.niigata-u.ac.jp/syllabusHtml/2024/03/03_240K5801_ja_JP.html"
+
+- id: "240K5805"
+  year: 2024
+  semester:
+    ja: "前期"
+    en: "Spring"
+  title:
+    ja: "物理学セミナー"
+    en: "Physics Seminar"
+  level:
+    ja: "学部3〜6年"
+    en: "Undergraduate (3rd-6th year)"
+  lang: ["ja", "en"]
+  url: "https://syllabus.niigata-u.ac.jp/syllabusHtml/2024/03/03_240K5805_ja_JP.html"

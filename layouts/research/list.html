@@ -1,0 +1,37 @@
+{{ define "main" }}
+{{- $research := hugo.Data.research -}}
+{{- $isEn := eq .Lang "en" -}}
+
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <h1 class="section-title">
+    {{ if $isEn }}Research{{ else }}研究{{ end }}
+  </h1>
+
+  <div class="space-y-8">
+    {{- range $research -}}
+    <article class="research-card">
+      <h2 class="text-xl font-bold text-gray-900 mb-3">
+        {{ if $isEn }}{{ .title.en }}{{ else }}{{ .title.ja }}{{ end }}
+      </h2>
+      <div class="prose text-gray-700 whitespace-pre-line mb-4">
+        {{ if $isEn }}{{ .description.en }}{{ else }}{{ .description.ja }}{{ end }}
+      </div>
+      {{- if .equation -}}
+      <div class="bg-gray-50 rounded-lg p-4 my-4 overflow-x-auto">
+        <p class="katex-eq">$${{ .equation | safeHTML }}$$</p>
+      </div>
+      {{- end -}}
+      <div class="flex flex-wrap gap-2 mt-3">
+        {{- range .keywords -}}
+        <span class="keyword-pill">{{ . }}</span>
+        {{- end -}}
+      </div>
+    </article>
+    {{- end -}}
+  </div>
+
+  {{- with .Content -}}
+  <div class="prose mt-12">{{ . }}</div>
+  {{- end -}}
+</div>
+{{ end }}

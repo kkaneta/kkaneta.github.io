@@ -1,0 +1,157 @@
+{{ define "main" }}
+{{- $pubs  := hugo.Data.publications -}}
+{{- $isEn  := eq .Lang "en" -}}
+{{- $self  := .Site.Params.author -}}
+
+{{/* 年度降順にソート */}}
+{{- $sorted := sort $pubs "year" "desc" -}}
+
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <h1 class="section-title">
+    {{ if $isEn }}Publications{{ else }}研究業績{{ end }}
+  </h1>
+
+  <!-- Filter tabs -->
+  <div class="flex gap-2 mb-8 flex-wrap" role="group" aria-label="{{ if $isEn }}Filter by type{{ else }}種別フィルター{{ end }}">
+    <button class="pub-filter-btn active text-sm px-4 py-1.5 rounded-full border-2 border-sky-500 bg-sky-50 text-sky-700 font-medium"
+            data-filter="all">
+      {{ if $isEn }}All{{ else }}すべて{{ end }}
+    </button>
+    <button class="pub-filter-btn text-sm px-4 py-1.5 rounded-full border border-gray-300 text-gray-600 hover:border-sky-400 hover:text-sky-600 font-medium"
+            data-filter="article">
+      {{ if $isEn }}Journal Articles{{ else }}学術論文{{ end }}
+    </button>
+    <button class="pub-filter-btn text-sm px-4 py-1.5 rounded-full border border-gray-300 text-gray-600 hover:border-sky-400 hover:text-sky-600 font-medium"
+            data-filter="proceedings">
+      {{ if $isEn }}Conference Proceedings{{ else }}国際会議{{ end }}
+    </button>
+  </div>
+
+  <!-- Publication list: year-break rendering -->
+  {{- $prevYear := 0 -}}
+  {{- range $sorted -}}
+  {{- $pub := . -}}
+
+  {{/* 年度ヘッダー */}}
+  {{- if ne .year $prevYear -}}
+    {{- if ne $prevYear 0 -}}</div></section>{{- end -}}
+    {{- $prevYear = .year -}}
+    <section class="pub-year-group mb-10" data-year="{{ .year }}">
+      <h2 class="text-lg font-bold text-gray-500 mb-4 flex items-center gap-3">
+        <span class="text-2xl font-extrabold text-gray-800">{{ .year }}</span>
+        <span class="flex-1 border-t border-gray-200"></span>
+      </h2>
+      <div class="space-y-4">
+  {{- end -}}
+
+  <!-- Publication card -->
+  <article class="pub-card" data-type="{{ .type }}">
+
+    <!-- Type badge -->
+    <div class="mb-2">
+      <span class="pub-type-badge">
+        {{- if eq .type "article" -}}
+          {{ if $isEn }}Journal Article{{ else }}学術論文{{ end }}
+        {{- else if eq .type "proceedings" -}}
+          {{ if $isEn }}Proceedings{{ else }}国際会議{{ end }}
+        {{- else -}}
+          {{ .type }}
+        {{- end -}}
+      </span>
+    </div>
+
+    <!-- Title -->
+    <h3 class="text-base font-semibold text-gray-900 mb-2 leading-snug">
+      {{- if .doi -}}
+        <a href="https://doi.org/{{ .doi }}" target="_blank" rel="noopener noreferrer"
+           class="hover:text-sky-600 transition-colors">{{ .title }}</a>
+      {{- else -}}
+        {{ .title }}
+      {{- end -}}
+    </h3>
+
+    <!-- Authors: 自分の名前は太字 -->
+    <p class="text-sm text-gray-700 mb-2">
+      {{- range $i, $author := .authors -}}
+        {{- if gt $i 0 }}, {{ end -}}
+        {{- if eq $author $self -}}
+          <strong class="font-bold text-gray-900">{{ $author }}</strong>
+        {{- else -}}
+          {{ $author }}
+        {{- end -}}
+      {{- end -}}
+    </p>
+
+    <!-- Venue -->
+    <p class="text-sm text-gray-600 italic mb-2">
+      {{- if .journal -}}
+        {{ .journal }}
+        {{- with .volume }}, <span class="font-medium not-italic text-gray-700">{{ . }}</span>{{ end -}}
+        {{- with .issue }}({{ . }}){{ end -}}
+        {{- with .pages }}: {{ . }}{{ end -}}
+        ({{ .year }})
+      {{- else if .booktitle -}}
+        {{ .booktitle }}
+        {{- with .pages }}, pp. {{ . }}{{ end -}}
+        ({{ .year }})
+      {{- end -}}
+    </p>
+
+    <!-- Links -->
+    <div class="flex flex-wrap gap-3 mt-3">
+      {{- with .doi -}}
+      <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-1 text-xs font-medium text-sky-600 hover:text-sky-800 bg-sky-50 hover:bg-sky-100 px-3 py-1 rounded transition-colors">
+        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+        </svg>
+        DOI
+      </a>
+      {{- end -}}
+      {{- with .arxiv -}}
+      <a href="https://arxiv.org/abs/{{ . }}" target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-1 text-xs font-medium text-orange-600 hover:text-orange-800 bg-orange-50 hover:bg-orange-100 px-3 py-1 rounded transition-colors">
+        arXiv:{{ . }}
+      </a>
+      {{- end -}}
+    </div>
+
+  </article>
+  {{- end -}}
+
+  {{/* 最後の年セクションを閉じる */}}
+  {{- if ne $prevYear 0 -}}</div></section>{{- end -}}
+
+  {{- with .Content -}}
+  <div class="prose mt-8">{{ . }}</div>
+  {{- end -}}
+</div>
+
+<!-- Filter script -->
+<script>
+  document.querySelectorAll('.pub-filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+
+      // ボタンのスタイル更新
+      document.querySelectorAll('.pub-filter-btn').forEach(b => {
+        b.classList.remove('active', 'border-2', 'border-sky-500', 'bg-sky-50', 'text-sky-700');
+        b.classList.add('border', 'border-gray-300', 'text-gray-600');
+      });
+      btn.classList.remove('border', 'border-gray-300', 'text-gray-600');
+      btn.classList.add('active', 'border-2', 'border-sky-500', 'bg-sky-50', 'text-sky-700');
+
+      // カードの表示/非表示
+      document.querySelectorAll('.pub-card').forEach(card => {
+        card.style.display = (filter === 'all' || card.dataset.type === filter) ? '' : 'none';
+      });
+
+      // 空の年セクションを非表示
+      document.querySelectorAll('.pub-year-group').forEach(section => {
+        const visible = [...section.querySelectorAll('.pub-card')].some(c => c.style.display !== 'none');
+        section.style.display = visible ? '' : 'none';
+      });
+    });
+  });
+</script>
+{{ end }}

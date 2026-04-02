@@ -1,0 +1,32 @@
+name:
+  ja: "金田 邦雄"
+  en: "Kunio Kaneta"
+
+position:
+  ja: "助教"
+  en: "Assistant Professor"
+
+institution:
+  ja: "新潟大学 教育学部"
+  en: "Faculty of Education, Niigata University"
+
+address:
+  ja: "〒950-2181 新潟市西区 五十嵐２の町8050"
+  en: "8050, Ikarashi 2-no-cho, Nishi-ku, Niigata 950-2181, Japan"
+
+email: "kaneta[at]ed.niigata-u.ac.jp"
+
+links:
+  github: ""
+  google_scholar: ""
+  orcid: "0000-0001-5391-2204"
+  researchgate: ""
+  INSPIRE-HEP: "https://inspirehep.net/authors/1078184"
+
+bio:
+  ja: |
+    理論物理学（素粒子論・宇宙論）を専門とする研究者です。特にインフレーションや暗黒物質など、初期宇宙の物理に興味を持っています。
+  en: |
+    I am a researcher specializing in theoretical physics, particularly particle physics and cosmology. My interests lie in the physics of the early universe, including inflation and dark matter.
+
+avatar: "/images/avatar.jpg"

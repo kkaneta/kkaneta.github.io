@@ -1,0 +1,108 @@
+{{- $profile := hugo.Data.profile -}}
+{{- $isEn := eq .Lang "en" -}}
+{{- $currentPage := . -}}
+
+{{/* relLangURL はレンダリング中の言語コンテキストを自動で使い、
+     baseURL のサブパス（例: /academic-site/）も含む正しい URL を返す */}}
+
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-gray-200">
+  <nav class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- Site name / logo -->
+      <a href="{{ relLangURL "" }}"
+         class="text-lg font-bold text-gray-900 hover:text-sky-600 transition-colors">
+        {{ if $isEn }}{{ $profile.name.en }}{{ else }}{{ $profile.name.ja }}{{ end }}
+      </a>
+
+      <!-- Desktop navigation -->
+      <div class="hidden md:flex items-center space-x-6">
+        {{- $navItems := slice
+          (dict "path" "" "ja" "ホーム" "en" "Home")
+          (dict "path" "research" "ja" "研究" "en" "Research")
+          (dict "path" "publications" "ja" "論文" "en" "Publications")
+          (dict "path" "teaching" "ja" "講義" "en" "Teaching")
+        -}}
+        {{- range $navItems -}}
+          {{/* relLangURL で baseURL subpath + 言語プレフィックスを付与 */}}
+          {{- $linkPath := cond (eq .path "") "" (printf "%s/" .path) -}}
+          {{- $href := relLangURL $linkPath -}}
+          {{- $label := cond $isEn .en .ja -}}
+          {{/* アクティブ判定: .Section は "research" 等のセクション名のみ返す */}}
+          {{- $isActive := false -}}
+          {{- if and $currentPage.IsHome (eq .path "") -}}
+            {{- $isActive = true -}}
+          {{- else if and (ne .path "") (eq $currentPage.Section .path) -}}
+            {{- $isActive = true -}}
+          {{- end -}}
+          <a href="{{ $href }}"
+             class="nav-link {{ if $isActive }}active{{ end }} text-sm pb-1"
+             {{ if $isActive }}aria-current="page"{{ end }}>
+            {{ $label }}
+          </a>
+        {{- end -}}
+      </div>
+
+      <!-- Language switcher + Mobile button -->
+      <div class="flex items-center space-x-2">
+        {{- if $isEn -}}
+          {{- range .Translations -}}
+            {{- if eq .Lang "ja" -}}
+              {{/* RelPermalink = baseURL subpath 込みの相対パス */}}
+              <a href="{{ .RelPermalink }}" class="text-xs font-medium px-3 py-1.5 rounded-full border border-gray-300 text-gray-600 hover:border-sky-400 hover:text-sky-600 transition-colors">日本語</a>
+            {{- end -}}
+          {{- end -}}
+          <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-sky-600 text-white">EN</span>
+        {{- else -}}
+          <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-sky-600 text-white">日本語</span>
+          {{- range .Translations -}}
+            {{- if eq .Lang "en" -}}
+              <a href="{{ .RelPermalink }}" class="text-xs font-medium px-3 py-1.5 rounded-full border border-gray-300 text-gray-600 hover:border-sky-400 hover:text-sky-600 transition-colors">EN</a>
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" type="button"
+                class="md:hidden p-2 rounded text-gray-500 hover:text-gray-700 hover:bg-gray-100"
+                aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">{{ if $isEn }}Open menu{{ else }}メニューを開く{{ end }}</span>
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden pb-3">
+      <div class="flex flex-col space-y-1 pt-2">
+        {{- $navItems2 := slice
+          (dict "path" "" "ja" "ホーム" "en" "Home")
+          (dict "path" "research" "ja" "研究" "en" "Research")
+          (dict "path" "publications" "ja" "論文" "en" "Publications")
+          (dict "path" "teaching" "ja" "講義" "en" "Teaching")
+        -}}
+        {{- range $navItems2 -}}
+          {{- $linkPath := cond (eq .path "") "" (printf "%s/" .path) -}}
+          {{- $href := relLangURL $linkPath -}}
+          <a href="{{ $href }}"
+             class="block px-3 py-2 rounded text-sm text-gray-700 hover:bg-gray-50 hover:text-sky-600">
+            {{ if $isEn }}{{ .en }}{{ else }}{{ .ja }}{{ end }}
+          </a>
+        {{- end -}}
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    menu.classList.toggle('hidden');
+  });
+</script>

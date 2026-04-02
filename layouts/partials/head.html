@@ -1,0 +1,70 @@
+{{- $profile := hugo.Data.profile -}}
+{{- $title := .Title | default $profile.name.ja -}}
+{{- $description := .Params.description | default (cond (eq .Lang "en") .Site.Params.description $profile.bio.ja) -}}
+{{- if eq .Lang "en" -}}
+  {{- $title = .Title | default $profile.name.en -}}
+  {{- $description = .Params.description | default $profile.bio.en -}}
+{{- end -}}
+{{- $ogTitle := printf "%s | %s" $title (cond (eq .Lang "en") $profile.name.en $profile.name.ja) -}}
+{{- if .IsHome -}}{{- $ogTitle = $title -}}{{- end -}}
+{{- $ogImage := absURL (.Params.ogImage | default .Site.Params.ogImage) -}}
+{{- $canonicalURL := .Permalink -}}
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<!-- Primary Meta -->
+<title>{{ $ogTitle }}</title>
+<meta name="description" content="{{ $description | plainify | truncate 160 }}" />
+<meta name="author" content="{{ cond (eq .Lang "en") $profile.name.en $profile.name.ja }}" />
+<link rel="canonical" href="{{ $canonicalURL }}" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}" />
+<meta property="og:url" content="{{ $canonicalURL }}" />
+<meta property="og:title" content="{{ $ogTitle }}" />
+<meta property="og:description" content="{{ $description | plainify | truncate 200 }}" />
+<meta property="og:image" content="{{ $ogImage }}" />
+<meta property="og:locale" content="{{ cond (eq .Lang "en") "en_US" "ja_JP" }}" />
+<meta property="og:site_name" content="{{ cond (eq .Lang "en") $profile.name.en $profile.name.ja }}" />
+{{- if not .IsHome }}
+<meta property="article:author" content="{{ cond (eq .Lang "en") $profile.name.en $profile.name.ja }}" />
+{{- end }}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ $ogTitle }}" />
+<meta name="twitter:description" content="{{ $description | plainify | truncate 200 }}" />
+<meta name="twitter:image" content="{{ $ogImage }}" />
+
+<!-- Alternate language -->
+{{- range .Translations }}
+<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}" />
+{{- end }}
+<link rel="alternate" hreflang="{{ .Lang }}" href="{{ $canonicalURL }}" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+<!-- CSS (Tailwind) -->
+{{- $opts := dict "inlineImports" true -}}
+{{- with resources.Get "css/main.css" | css.TailwindCSS $opts -}}
+  {{- if eq hugo.Environment "development" -}}
+    <link rel="stylesheet" href="{{ .RelPermalink }}" />
+  {{- else -}}
+    {{- with . | minify | fingerprint -}}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" />
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<!-- KaTeX CSS (only on math pages) -->
+{{- if .Params.math -}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+{{- end -}}
