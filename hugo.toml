@@ -46,6 +46,10 @@ disableKinds = ["taxonomy", "term", "RSS"]
     [languages.en.params]
       description = "Kunio Kaneta's Website"
 
+[services]
+  [services.googleAnalytics]
+    ID = "G-7WF9GREZC5"
+
 [params]
   author = "Kunio Kaneta"
   authorDisplay = "Kaneta Kunio"
