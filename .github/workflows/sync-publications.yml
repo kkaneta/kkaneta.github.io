@@ -1,0 +1,44 @@
+name: Sync publications from INSPIRE-HEP
+
+on:
+  schedule:
+    # Mondays at 09:00 JST (00:00 UTC).
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Sync data/publications.yml from INSPIRE-HEP
+        run: python3 scripts/sync_publications.py
+
+      - name: Open a pull request if anything changed
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: sync/publications
+          commit-message: 'Sync publications from INSPIRE-HEP'
+          title: 'Sync publications from INSPIRE-HEP'
+          body: |
+            `scripts/sync_publications.py` found new or updated records on
+            [INSPIRE-HEP](https://inspirehep.net/authors/1078184).
+
+            This usually means a new preprint appeared, or a preprint has now
+            been published and its journal, volume, pages and DOI are filled in.
+
+            Review the diff and merge to publish. Merging to `main` triggers the
+            normal deploy workflow.
+          labels: publications
+          delete-branch: true
