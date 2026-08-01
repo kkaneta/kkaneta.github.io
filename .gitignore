@@ -4,4 +4,6 @@ node_modules/
 resources/_gen/
 MAINTENANCE.md
 site_spec_v2.md
-bibtex2yaml.py
+
+# Superseded tooling, kept locally for reference.
+archive/
