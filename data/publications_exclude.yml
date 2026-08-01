@@ -1,0 +1,10 @@
+# INSPIRE-HEP texkeys to keep off the publications page.
+#
+# scripts/sync_publications.py regenerates data/publications.yml from INSPIRE.
+# Any texkey listed here is skipped. Add a line to drop a paper, delete a line
+# to bring it back.
+#
+# Only journal articles are synced, so conference papers and theses are already
+# left off and do not need entries here.
+
+# - Someone:2020abc   # reason for leaving this one off

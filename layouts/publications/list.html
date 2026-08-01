@@ -11,21 +11,10 @@
     {{ if $isEn }}Publications{{ else }}研究業績{{ end }}
   </h1>
 
-  <!-- Filter tabs -->
-  <div class="flex gap-2 mb-8 flex-wrap" role="group" aria-label="{{ if $isEn }}Filter by type{{ else }}種別フィルター{{ end }}">
-    <button class="pub-filter-btn active text-sm px-4 py-1.5 rounded-full border-2 border-sky-500 bg-sky-50 text-sky-700 font-medium"
-            data-filter="all">
-      {{ if $isEn }}All{{ else }}すべて{{ end }}
-    </button>
-    <button class="pub-filter-btn text-sm px-4 py-1.5 rounded-full border border-gray-300 text-gray-600 hover:border-sky-400 hover:text-sky-600 font-medium"
-            data-filter="article">
-      {{ if $isEn }}Journal Articles{{ else }}学術論文{{ end }}
-    </button>
-    <button class="pub-filter-btn text-sm px-4 py-1.5 rounded-full border border-gray-300 text-gray-600 hover:border-sky-400 hover:text-sky-600 font-medium"
-            data-filter="proceedings">
-      {{ if $isEn }}Conference Proceedings{{ else }}国際会議{{ end }}
-    </button>
-  </div>
+  <p class="text-sm text-gray-500 mb-8">
+    {{ $count := len $pubs }}
+    {{- if $isEn }}{{ $count }} journal articles{{ else }}学術論文 {{ $count }} 件{{ end -}}
+  </p>
 
   <!-- Publication list: year-break rendering -->
   {{- $prevYear := 0 -}}
@@ -45,20 +34,7 @@
   {{- end -}}
 
   <!-- Publication card -->
-  <article class="pub-card" data-type="{{ .type }}">
-
-    <!-- Type badge -->
-    <div class="mb-2">
-      <span class="pub-type-badge">
-        {{- if eq .type "article" -}}
-          {{ if $isEn }}Journal Article{{ else }}学術論文{{ end }}
-        {{- else if eq .type "proceedings" -}}
-          {{ if $isEn }}Proceedings{{ else }}国際会議{{ end }}
-        {{- else -}}
-          {{ .type }}
-        {{- end -}}
-      </span>
-    </div>
+  <article class="pub-card">
 
     <!-- Title -->
     <h3 class="text-base font-semibold text-gray-900 mb-2 leading-snug">
@@ -88,11 +64,11 @@
         {{ .journal }}
         {{- with .volume }}, <span class="font-medium not-italic text-gray-700">{{ . }}</span>{{ end -}}
         {{- with .issue }}({{ . }}){{ end -}}
-        {{- with .pages }}: {{ . }}{{ end -}}
+        {{- with .pages }}: {{ . }}{{ end }}
         ({{ .year }})
       {{- else if .booktitle -}}
         {{ .booktitle }}
-        {{- with .pages }}, pp. {{ . }}{{ end -}}
+        {{- with .pages }}, pp. {{ . }}{{ end }}
         ({{ .year }})
       {{- end -}}
     </p>
@@ -126,32 +102,4 @@
   <div class="prose mt-8">{{ . }}</div>
   {{- end -}}
 </div>
-
-<!-- Filter script -->
-<script>
-  document.querySelectorAll('.pub-filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.dataset.filter;
-
-      // ボタンのスタイル更新
-      document.querySelectorAll('.pub-filter-btn').forEach(b => {
-        b.classList.remove('active', 'border-2', 'border-sky-500', 'bg-sky-50', 'text-sky-700');
-        b.classList.add('border', 'border-gray-300', 'text-gray-600');
-      });
-      btn.classList.remove('border', 'border-gray-300', 'text-gray-600');
-      btn.classList.add('active', 'border-2', 'border-sky-500', 'bg-sky-50', 'text-sky-700');
-
-      // カードの表示/非表示
-      document.querySelectorAll('.pub-card').forEach(card => {
-        card.style.display = (filter === 'all' || card.dataset.type === filter) ? '' : 'none';
-      });
-
-      // 空の年セクションを非表示
-      document.querySelectorAll('.pub-year-group').forEach(section => {
-        const visible = [...section.querySelectorAll('.pub-card')].some(c => c.style.display !== 'none');
-        section.style.display = visible ? '' : 'none';
-      });
-    });
-  });
-</script>
 {{ end }}
