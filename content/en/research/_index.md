@@ -1,5 +1,5 @@
 ---
 title: "Research"
-description: "Research on quantum entanglement in topological systems and applications of QFT to condensed matter physics"
+description: "Research in particle physics and cosmology: inflationary cosmology, cosmic reheating and particle production, and dark matter production mechanisms"
 math: true
 ---
