@@ -15,6 +15,9 @@ Usage:
     python3 scripts/sync_publications.py --check    # report drift, write nothing
     python3 scripts/sync_publications.py --stdout   # print YAML, write nothing
 
+The sync refuses to write when the result looks wrong rather than publishing it:
+see the "safety checks" section below.
+
 No external dependencies (stdlib only).
 """
 
@@ -66,6 +69,11 @@ JOURNAL_MAP = {
 # Journals whose INSPIRE "volume" is really an issue number (JHEP 05 (2026) 229).
 # The site follows the publisher convention instead: volume = year, issue = month.
 MONTH_AS_VOLUME = {"JHEP", "JCAP"}
+
+# Refuse to rewrite the file if the freshly fetched list falls below this
+# fraction of the list it would replace. The site publishes without review, so a
+# query that silently stops matching must stop the sync, not empty the page.
+SHRINK_TOLERANCE = 0.9
 
 
 # --- helpers ---------------------------------------------------------------
@@ -221,6 +229,10 @@ def build_entry(meta, known_titles):
         "title": title,
     }
 
+    if journal_abbrev and journal_abbrev not in JOURNAL_MAP:
+        # Nothing downstream can catch this: the entry renders fine, just with
+        # "SciPost Phys." sitting next to "Physical Review D". main() stops.
+        entry["_unknown_journal"] = journal_abbrev
     journal_full = JOURNAL_MAP.get(journal_abbrev, journal_abbrev)
     if journal_full:
         entry["journal"] = journal_full
@@ -277,6 +289,73 @@ def render(entries):
     return "\n".join(lines) + "\n"
 
 
+# --- safety checks ---------------------------------------------------------
+#
+# data/publications.yml is published without a human reading it first, so each
+# check below turns a failure that would reach the site into a failed workflow
+# run and an email instead.
+
+
+def count_existing_entries():
+    """How many publications the current file holds (0 if it does not exist)."""
+    if not OUT.exists():
+        return 0
+    return len(re.findall(r"^- id: ", OUT.read_text(encoding="utf-8"), re.M))
+
+
+def check_entries(entries):
+    """Report records INSPIRE returned without the fields the site renders."""
+    problems = []
+    for e in entries:
+        if not e.get("authors"):
+            problems.append(f"{e['id']}: INSPIRE returned no author list.")
+        if not e.get("title"):
+            problems.append(f"{e['id']}: INSPIRE returned no title.")
+    return problems
+
+
+def check_journals(entries):
+    """Report journal abbreviations that JOURNAL_MAP does not spell out."""
+    unknown = {}
+    for e in entries:
+        abbrev = e.get("_unknown_journal")
+        if abbrev:
+            unknown.setdefault(abbrev, []).append(e["id"])
+    problems = []
+    for abbrev, ids in sorted(unknown.items()):
+        problems.append(
+            f"unknown journal abbreviation {json.dumps(abbrev)} "
+            f"(in {', '.join(ids)}).\n"
+            f"      Without a mapping the site prints the abbreviation next to "
+            f"the full\n"
+            f"      names of every other journal. Add a line to JOURNAL_MAP in "
+            f"{Path(__file__).name}:\n"
+            f"          {json.dumps(abbrev)}: \"<full journal name>\","
+        )
+    return problems
+
+
+def check_count(new_count, old_count, allow_shrink):
+    """Refuse a drop large enough to look like a failed query."""
+    if old_count == 0 or allow_shrink:
+        return []
+    if new_count >= old_count * SHRINK_TOLERANCE:
+        return []
+    return [
+        f"INSPIRE returned {new_count} publications, replacing a file that "
+        f"holds {old_count}.\n"
+        f"      A drop this size usually means the query stopped matching — a "
+        f"changed\n"
+        f"      author identifier or a changed API — not that the papers went "
+        f"away.\n"
+        f"      Check https://inspirehep.net/authors/1078184 first. If the "
+        f"shorter list\n"
+        f"      is genuinely right (several papers excluded at once), re-run "
+        f"with\n"
+        f"      --allow-shrink."
+    ]
+
+
 # --- main ------------------------------------------------------------------
 
 
@@ -286,6 +365,9 @@ def main():
                         help="exit 1 if the file is out of date; write nothing")
     parser.add_argument("--stdout", action="store_true",
                         help="print the generated YAML instead of writing it")
+    parser.add_argument("--allow-shrink", action="store_true",
+                        help="write even though the list shrank sharply; use "
+                             "after excluding several papers on purpose")
     args = parser.parse_args()
 
     excludes = load_excludes()
@@ -304,11 +386,25 @@ def main():
 
     # Newest first: by publication year, then by arXiv submission date.
     entries.sort(key=lambda e: (e["year"], e["_date"]), reverse=True)
+
+    problems = check_entries(entries) + check_journals(entries)
+    problems += check_count(len(entries), count_existing_entries(),
+                            args.allow_shrink)
+
     for entry in entries:
         entry.pop("_date")
+        entry.pop("_unknown_journal", None)
 
     yaml = render(entries)
     print(f"{len(entries)} publications ({len(skipped)} excluded)", file=sys.stderr)
+
+    if problems:
+        print("data/publications.yml was NOT updated:", file=sys.stderr)
+        for problem in problems:
+            print(f"  - {problem}", file=sys.stderr)
+        if args.stdout:
+            sys.stdout.write(yaml)
+        return 2
 
     if args.stdout:
         sys.stdout.write(yaml)
