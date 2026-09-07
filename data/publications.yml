@@ -6,6 +6,17 @@
 # To keep a record off the site, list its id in publications_exclude.yml.
 
 # 2026
+- id: "Ellis:2026cmx"
+  type: "article"
+  year: 2026
+  authors:
+    - "John Ellis"
+    - "Tony Gherghetta"
+    - "Kunio Kaneta"
+    - "Wenqi Ke"
+    - "Keith A. Olive"
+  title: "Radiative Corrections and Reheating in Supergravity Models of Inflation"
+  arxiv: "2609.00221"
 - id: "Kaneta:2026qxx"
   type: "article"
   year: 2026
