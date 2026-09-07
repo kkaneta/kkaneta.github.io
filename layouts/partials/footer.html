@@ -12,11 +12,8 @@
         <p>
           {{ if $isEn }}{{ $profile.institution.en }}{{ else }}{{ $profile.institution.ja }}{{ end }}
         </p>
-        <p>
-          <a href="mailto:{{ $profile.email }}" class="hover:text-sky-600 transition-colors">
-            {{ $profile.email }}
-          </a>
-        </p>
+        {{/* Shown as text, not a mailto: link — see layouts/index.html. */}}
+        <p>{{ $profile.email }}</p>
       </div>
 
       <div class="flex items-center gap-4 text-sm text-gray-500">
