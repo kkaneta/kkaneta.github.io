@@ -1,76 +1,80 @@
 {{ define "main" }}
-{{- $teaching := hugo.Data.teaching -}}
+{{- $courses := hugo.Data.teaching -}}
 {{- $isEn := eq .Lang "en" -}}
 
-{{/* 英語ページでは lang に "en" を含む項目のみ表示 */}}
-{{- $filtered := slice -}}
-{{- range $teaching -}}
-  {{- if $isEn -}}
-    {{- if in .lang "en" -}}
-      {{- $filtered = append . $filtered -}}
-    {{- end -}}
-  {{- else -}}
-    {{- $filtered = append . $filtered -}}
+{{/* 英語ページに載るのは英題のある科目だけ。title.en を書けば載る。 */}}
+{{- $shown := slice -}}
+{{- range $courses -}}
+  {{- if or (not $isEn) .title.en -}}
+    {{- $shown = $shown | append . -}}
   {{- end -}}
 {{- end -}}
 
-{{/* 年度降順ソート */}}
-{{- $sorted := sort $filtered "year" "desc" -}}
+{{/* 開講年度の範囲。新しい年度から降順に回すので、年ごとの開始タグと終了タグを
+     ループの中で手作業で開閉する必要がない。 */}}
+{{- $newest := 0 -}}
+{{- $oldest := 0 -}}
+{{- range $shown -}}
+  {{- range .years -}}
+    {{- if or (eq $newest 0) (gt . $newest) -}}{{- $newest = . -}}{{- end -}}
+    {{- if or (eq $oldest 0) (lt . $oldest) -}}{{- $oldest = . -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
 
 <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
   <h1 class="section-title">
     {{ if $isEn }}Teaching{{ else }}担当講義{{ end }}
   </h1>
 
-  {{- if eq (len $filtered) 0 -}}
+  {{- if eq (len $shown) 0 -}}
   <p class="text-gray-500 italic py-8 text-center">
     {{ if $isEn }}No courses to display.{{ else }}表示する講義がありません。{{ end }}
   </p>
   {{- else -}}
 
-  {{/* 年度ブレーク方式 */}}
-  {{- $prevYear := 0 -}}
-  {{- range $sorted -}}
-
-    {{- if ne .year $prevYear -}}
-      {{- if ne $prevYear 0 -}}</div></section>{{- end -}}
-      {{- $prevYear = .year -}}
+  {{- range $year := seq $newest -1 $oldest -}}
+    {{- $thisYear := slice -}}
+    {{- range $shown -}}
+      {{- if in .years $year -}}{{- $thisYear = $thisYear | append . -}}{{- end -}}
+    {{- end -}}
+    {{- if $thisYear -}}
       <section class="mb-10">
         <h2 class="text-xl font-bold text-gray-700 mb-4 flex items-center gap-3">
-          <span class="text-2xl font-extrabold text-gray-900">{{ .year }}</span>
+          <span class="text-2xl font-extrabold text-gray-900">{{ $year }}</span>
           <span class="flex-1 border-t border-gray-200"></span>
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    {{- end -}}
-
-    <div class="course-card">
-      <div class="flex items-start justify-between gap-2 mb-2">
-        <h3 class="text-base font-semibold text-gray-900">
-          {{- if .url -}}
-            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"
-               class="hover:text-sky-600 transition-colors">
-              {{ if $isEn }}{{ .title.en }}{{ else }}{{ .title.ja }}{{ end }}
-            </a>
-          {{- else -}}
-            {{ if $isEn }}{{ .title.en }}{{ else }}{{ .title.ja }}{{ end }}
+          {{- range $thisYear -}}
+            {{/* シラバスURLは年度と科目コードから組み立てる。2026年度の "0K6140"
+                 なら .../2026/03/03_260K6140_ja_JP.html。大学が方式を変えたら
+                 エントリに url: を書けばそちらが優先される。 */}}
+            {{- $code := printf "%02d%s" (mod $year 100) .code -}}
+            {{- $syllabus := .url | default (printf "https://syllabus.niigata-u.ac.jp/syllabusHtml/%d/%s/%s_%s_ja_JP.html" $year .dept .dept $code) -}}
+            <div class="course-card">
+              <div class="flex items-start justify-between gap-2 mb-2">
+                <h3 class="text-base font-semibold text-gray-900">
+                  <a href="{{ $syllabus }}" target="_blank" rel="noopener noreferrer"
+                     class="hover:text-sky-600 transition-colors">
+                    {{ if $isEn }}{{ .title.en }}{{ else }}{{ .title.ja }}{{ end }}
+                  </a>
+                </h3>
+                {{- if and (not $isEn) (not .title.en) -}}
+                <span class="flex-shrink-0 text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-medium whitespace-nowrap">
+                  日本語のみ
+                </span>
+                {{- end -}}
+              </div>
+              <p class="text-sm text-gray-500">
+                {{ if $isEn }}{{ .level.en }}{{ else }}{{ .level.ja }}{{ end }}
+                &nbsp;|&nbsp;
+                {{ if $isEn }}{{ .semester.en }}{{ else }}{{ .semester.ja }}{{ end }}
+              </p>
+            </div>
           {{- end -}}
-        </h3>
-        {{/* 日本語のみのバッジ（日本語ページでのみ表示） */}}
-        {{- if and (not $isEn) (not (in .lang "en")) -}}
-        <span class="flex-shrink-0 text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-medium whitespace-nowrap">
-          日本語のみ
-        </span>
-        {{- end -}}
-      </div>
-      <p class="text-sm text-gray-500">
-        {{ if $isEn }}{{ .level.en }}{{ else }}{{ .level.ja }}{{ end }}
-        &nbsp;|&nbsp;
-        {{ if $isEn }}{{ .semester.en }}{{ else }}{{ .semester.ja }}{{ end }}
-      </p>
-    </div>
-
+        </div>
+      </section>
+    {{- end -}}
   {{- end -}}
-  {{- if ne $prevYear 0 -}}</div></section>{{- end -}}
 
   {{- end -}}
 
