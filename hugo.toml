@@ -3,15 +3,22 @@ title = "Kaneta Kunio"
 defaultContentLanguage = "ja"
 defaultContentLanguageInSubdir = false
 
+# Keep these above the first [table] header. A bare key written after one
+# belongs to that table in TOML, so `disableKinds` placed below [build] became
+# `build.disableKinds` and was dropped without a warning, which is how empty
+# /categories/ and /tags/ pages ended up published and in the sitemap.
+disableKinds = ["taxonomy", "term", "rss"]
+enableRobotsTXT = true
+
 [module]
   [module.hugoVersion]
+    # The templates use css.TailwindCSS and hugo.Data, both far newer than the
+    # 0.116.0 this used to claim, so the check never protected anyone.
     extended = true
-    min = "0.116.0"
+    min = "0.128.0"
 
 [build]
   writeStats = true
-
-disableKinds = ["taxonomy", "term", "RSS"]
 
 [outputs]
   home = ["HTML"]
@@ -50,13 +57,11 @@ disableKinds = ["taxonomy", "term", "RSS"]
   [services.googleAnalytics]
     ID = "G-7WF9GREZC5"
 
+# Name, position, institution, email and the profile links live in
+# data/profile.yml — that is what the templates read. Only the two settings
+# below are read from here.
 [params]
+  # Must match the author name INSPIRE returns, or the publications page stops
+  # printing your own name in bold.
   author = "Kunio Kaneta"
-  authorDisplay = "Kaneta Kunio"
-  institution_ja = "新潟大学教育学部"
-  institution_en = "Faculty of Education, Niigata University"
-  email = "kaneta[at]ed.niigata-u.ac.jp"
-  github = "https://github.com/kkaneta"
-  googleScholar = ""
-  orcid = ""
   ogImage = "/images/og-default.png"
