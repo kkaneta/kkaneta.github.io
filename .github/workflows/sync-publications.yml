@@ -6,13 +6,14 @@ on:
     - cron: '0 0 * * 1'
   workflow_dispatch:
 
-permissions:
-  contents: write
-  pull-requests: write
-
 jobs:
   sync:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+      sha: ${{ steps.commit.outputs.sha }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -22,23 +23,38 @@ jobs:
         with:
           python-version: '3.12'
 
+      # The site publishes this file without anyone reading it first, so the
+      # script stops the run rather than writing a list that looks wrong: an
+      # empty result from INSPIRE, a journal it cannot spell out, a record with
+      # no authors. A failed run leaves the published list untouched.
       - name: Sync data/publications.yml from INSPIRE-HEP
         run: python3 scripts/sync_publications.py
 
-      - name: Open a pull request if anything changed
-        uses: peter-evans/create-pull-request@v8
-        with:
-          branch: sync/publications
-          commit-message: 'Sync publications from INSPIRE-HEP'
-          title: 'Sync publications from INSPIRE-HEP'
-          body: |
-            `scripts/sync_publications.py` found new or updated records on
-            [INSPIRE-HEP](https://inspirehep.net/authors/1078184).
+      - name: Commit and push if anything changed
+        id: commit
+        run: |
+          if git diff --quiet -- data/publications.yml; then
+            echo 'data/publications.yml is already up to date.'
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/publications.yml
+          git commit -m 'Sync publications from INSPIRE-HEP'
+          git push origin HEAD:main
+          echo 'changed=true' >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
-            This usually means a new preprint appeared, or a preprint has now
-            been published and its journal, volume, pages and DOI are filled in.
-
-            Review the diff and merge to publish. Merging to `main` triggers the
-            normal deploy workflow.
-          labels: publications
-          delete-branch: true
+  # GitHub does not start a workflow from a push made with GITHUB_TOKEN, so
+  # deploy.yml would never see the commit above. Call it directly instead.
+  deploy:
+    needs: sync
+    if: needs.sync.outputs.changed == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy.yml
+    with:
+      ref: ${{ needs.sync.outputs.sha }}

@@ -5,6 +5,15 @@ on:
     branches:
       - main
   workflow_dispatch:
+  # Called by sync-publications.yml. A push made with GITHUB_TOKEN does not
+  # start another workflow run, so the sync has to invoke the deploy itself.
+  workflow_call:
+    inputs:
+      ref:
+        description: 'Commit to build. Empty means the ref that triggered the run.'
+        type: string
+        required: false
+        default: ''
 
 permissions:
   contents: read
@@ -29,8 +38,12 @@ jobs:
           sudo mv ${{ runner.temp }}/hugo /usr/local/bin/
           hugo version
 
+      # A workflow_call run inherits the caller's event, so github.sha still
+      # points at the commit from before the sync pushed. Build `ref` instead.
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.ref }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v7
