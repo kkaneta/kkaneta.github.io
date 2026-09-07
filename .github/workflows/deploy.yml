@@ -45,6 +45,19 @@ jobs:
         with:
           ref: ${{ inputs.ref }}
 
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      # Blank fields in data/ render as blank spaces rather than as an error,
+      # so check the shape of those files before anything gets published. A
+      # failure here leaves the live site on its previous build.
+      - name: Check data/
+        run: |
+          pip install --quiet pyyaml
+          python3 scripts/check_data.py
+
       - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
