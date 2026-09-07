@@ -136,7 +136,11 @@ def load_existing_titles():
     if not OUT.exists():
         return titles
     for block in re.split(r"\n(?=- id:)", OUT.read_text(encoding="utf-8")):
-        found = dict(re.findall(r'^  (id|title|arxiv): "(.*)"$', block, re.M))
+        # The id sits on the entry's opening line ("- id:"), the rest are
+        # indented; matching only the indented form left every title keyed by
+        # arXiv number alone, so a record without a preprint lost its title.
+        found = dict(re.findall(r'^(?:- |  )(id|title|arxiv): "(.*)"$',
+                                block, re.M))
         if "title" not in found:
             continue
         for key in ("id", "arxiv"):
