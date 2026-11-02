@@ -418,6 +418,32 @@ JOURNAL_MAP = {
 
 > **なぜ手順3が必要なのか**: GitHub には「Actions が自分で行った push は別のワークフローを起動しない」という仕様（無限ループ防止）があります。そのため放置すると `publications.yml` だけが更新され、公開ページは古いままになります。同期側から明示的にデプロイを呼ぶことで防いでいます。
 
+### 60日間活動がないと論文同期が止まる
+
+GitHub は、公開リポジトリで **60日間 commit などの活動がない**と、定期実行のワークフロー（ここでは `sync-publications.yml`）を自動で無効にします。`deploy.yml` は push で動くので影響を受けません。
+
+新しい論文が出れば同期が commit するので、通常は問題になりません。新しい論文がなく、手でも更新しない期間が続くと、次の表示が出ます。
+
+**警告の段階**（Actions タブに `This workflow will be disabled soon because there's no recent activity in the repository.`）
+
+まだ動いています。空のコミットを push して活動を記録します。ファイルは何も変わりません。
+
+```bash
+git commit --allow-empty -m "Keep scheduled publication sync active"
+git push origin main
+```
+
+deploy が1回走りますが、内容は同じなので公開ページは変わりません。ほかの更新（講義の追加など）を push する予定があれば、それで代わりになります。
+
+**無効になった後**（`This scheduled workflow is disabled because there hasn't been activity ...`）
+
+空のコミットでは再開しません。次のどちらかで有効に戻します。
+
+- **Actions タブ → Sync publications from INSPIRE-HEP → Enable workflow**
+- または `gh workflow enable sync-publications.yml`
+
+止まっていた間の同期は、続けて **Run workflow** で1回手動実行すれば取り戻せます。
+
 ### 通常の更新フロー
 
 VS Code から:
@@ -512,6 +538,10 @@ python3 scripts/check_data.py
 
 **公開中の論文一覧は失敗しても消えません。** 同期が成功するまで前回の内容が残ります。
 
+### 「This workflow will be disabled soon ...」と表示された
+
+60日間リポジトリに活動がないための警告です。[8章](#60日間活動がないと論文同期が止まる)の手順で空のコミットを push してください。すでに無効になっている場合は **Enable workflow** で戻します。
+
 ### ローカルでのエラー
 
 #### `tailwindcss: Permission denied`
@@ -591,3 +621,4 @@ title: "タイトル"
 | 連絡先変更時 | メール・リンクを更新 | `data/profile.yml` |
 | 写真変更時 | 写真を差し替え | `static/images/avatar.jpg` |
 | 新しい雑誌に掲載時 | 同期が止まったら1行追加 | `scripts/sync_publications.py` |
+| 「workflow will be disabled soon」の表示時 | 空のコミットを push（無効化後は Enable workflow） | — |
