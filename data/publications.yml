@@ -6,6 +6,15 @@
 # To keep a record off the site, list its id in publications_exclude.yml.
 
 # 2026
+- id: "Gherghetta:2026got"
+  type: "article"
+  year: 2026
+  authors:
+    - "Tony Gherghetta"
+    - "Kunio Kaneta"
+    - "Wenqi Ke"
+  title: "Naturalness in the Past from a Time-Dependent Supersymmetry Scale"
+  arxiv: "2611.12363"
 - id: "Ellis:2026cmx"
   type: "article"
   year: 2026
